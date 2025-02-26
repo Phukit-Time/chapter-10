@@ -185,3 +185,18 @@ services:
       - db
       - rabbit
     restart: "no"
+
+  advertise:
+    build:
+      context: ./advertise
+      dockerfile: Dockerfile
+    container_name: advertise
+    ports:
+      - "4007:80"
+    environment:
+      - PORT=80
+      # Add other environment variables as needed
+    depends_on:
+      - db
+      - rabbit
+    restart: "no"

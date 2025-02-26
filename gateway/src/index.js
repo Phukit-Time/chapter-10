@@ -56,7 +56,17 @@ async function main() {
     app.get("/upload", (req, res) => {
         res.render("upload-video", {});
     });
+    app.get("/advertise", (req, res) => {
+        res.render("advertise", {
+          links: [
+            { name: "Shopee", url: "https://shopee.co.th/" },
+            { name: "Lazada", url: "https://www.lazada.co.th/" },
+            { name: "Kaidee", url: "https://www.kaidee.com/" }
 
+          ]
+        });
+      });
+      
     //
     // Web page to show the users viewing history.
     //
